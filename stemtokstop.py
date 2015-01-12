@@ -1,11 +1,12 @@
 # -*- coding: utf8 -*-
-from flask import Flask, Response, request
+from flask import Flask, request, jsonify
 from nltk.tokenize.punkt import PunktWordTokenizer
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
 import json
 
 app = Flask(__name__)
+JSON_MIME = 'application/json; charset=utf8'
 
 # ISO639-1
 NLTKlanguages={'NL': "dutch",
@@ -39,12 +40,11 @@ def hello():
 
 @app.route("/ru", methods=['POST'])
 def post_russian():
-    if 'text' in request.form:
-        js = russian(request.form['text'])
-    else:
-        js = []
-    return Response(json.dumps(js),  mimetype='application/json; charset=utf8')
+    js = russian(request.form['text'])
+    return jsonify(text=js)
 
 
 if __name__ == '__main__':
-    app.run(host = '127.0.0.1', debug = True)
+    app.config['JSON_AS_ASCII'] = False     # JSON in UTF-8
+    app.config['DEBUG'] = True              # I love debug mode
+    app.run(host = '127.0.0.1')

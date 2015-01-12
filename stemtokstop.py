@@ -21,10 +21,20 @@ def finnish(sent):
     pass
 
 def german(sent):
-    pass
+    stem = SnowballStemmer('german')
+    stop = stopwords.words('german')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def italian(sent):
-    pass
+    stem = SnowballStemmer('italian')
+    stop = stopwords.words('italian')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def portuguese(sent):
     pass
@@ -36,7 +46,12 @@ def turkish(sent):
     pass
 
 def danish(sent):
-    pass
+    stem = SnowballStemmer('danish')
+    stop = stopwords.words('danish')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def english(sent):
     stem = SnowballStemmer('english')
@@ -69,7 +84,12 @@ def russian(sent):
     return px
 
 def swedish(sent):
-    pass
+    stem = SnowballStemmer('swedish')
+    stop = stopwords.words('swedish')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 # ISO639-1
 NLTKlanguages={'nl': dutch,

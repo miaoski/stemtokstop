@@ -12,18 +12,23 @@ JSON_MIME = 'application/json; charset=utf8'
 def dutch(sent):
     stem = SnowballStemmer('dutch')
     stop = stopwords.words('dutch')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
 
 def finnish(sent):
-    pass
+    stem = SnowballStemmer('finnish')
+    stop = stopwords.words('finnish')
+    tx  = word_tokenize(sent)
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def german(sent):
     stem = SnowballStemmer('german')
     stop = stopwords.words('german')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
@@ -31,24 +36,40 @@ def german(sent):
 def italian(sent):
     stem = SnowballStemmer('italian')
     stop = stopwords.words('italian')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
 
 def portuguese(sent):
-    pass
+    stem = SnowballStemmer('portuguese')
+    stop = stopwords.words('portuguese')
+    tx  = word_tokenize(sent)
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def spanish(sent):
-    pass
+    stem = SnowballStemmer('spanish')
+    stop = stopwords.words('spanish')
+    tx  = word_tokenize(sent)
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def turkish(sent):
-    pass
+    #stem = SnowballStemmer('turkish')
+    stop = stopwords.words('turkish')
+    tx  = word_tokenize(sent)
+    # No turkish stemmer
+    #mx = map(stem.stem, tx)
+    px = [x for x in tx if x not in stop]
+    return px
 
 def danish(sent):
     stem = SnowballStemmer('danish')
     stop = stopwords.words('danish')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
@@ -56,7 +77,7 @@ def danish(sent):
 def english(sent):
     stem = SnowballStemmer('english')
     stop = stopwords.words('english')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
@@ -64,21 +85,31 @@ def english(sent):
 def french(sent):
     stem = SnowballStemmer('french')
     stop = stopwords.words('french')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
 
 def hungarian(sent):
-    pass
+    stem = SnowballStemmer('hungarian')
+    stop = stopwords.words('hungarian')
+    tx  = word_tokenize(sent)
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def norwegian(sent):
-    pass
+    stem = SnowballStemmer('norwegian')
+    stop = stopwords.words('norwegian')
+    tx  = word_tokenize(sent)
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def russian(sent):
     stem = SnowballStemmer('russian')
     stop = stopwords.words('russian')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px
@@ -86,7 +117,7 @@ def russian(sent):
 def swedish(sent):
     stem = SnowballStemmer('swedish')
     stop = stopwords.words('swedish')
-    tx  = word_tokenize(sent) 
+    tx  = word_tokenize(sent)
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px

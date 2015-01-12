@@ -13,6 +13,8 @@ INSTALL
     >>> ^D
     $ python stemtokstop.py
 
+For Japanese stemmer, I chose [MeCab] (http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html) and IPA 辞書.  Please follow its installation guide.
+
 
 TEST
 ====

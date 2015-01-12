@@ -47,7 +47,12 @@ def english(sent):
     return px
 
 def french(sent):
-    pass
+    stem = SnowballStemmer('french')
+    stop = stopwords.words('french')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def hungarian(sent):
     pass

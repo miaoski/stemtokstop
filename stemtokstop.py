@@ -1,5 +1,6 @@
 # -*- coding: utf8 -*-
 from flask import Flask, request, jsonify, abort
+from nltk.tokenize import word_tokenize
 from nltk.tokenize.punkt import PunktWordTokenizer
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
@@ -47,7 +48,7 @@ def norwegian(sent):
 def russian(sent):
     stem = SnowballStemmer('russian')
     stop = stopwords.words('russian')
-    tx  = PunktWordTokenizer().tokenize(sent) 
+    tx  = word_tokenize(sent) 
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
     return px

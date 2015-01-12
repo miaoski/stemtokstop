@@ -1,7 +1,11 @@
 # -*- coding: utf8 -*-
+from flask import Flask, Response, request
 from nltk.tokenize.punkt import PunktWordTokenizer
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+import json
+
+app = Flask(__name__)
 
 # ISO639-1
 NLTKlanguages={'NL': "dutch",
@@ -25,9 +29,22 @@ def russian(sent):
     tx  = PunktWordTokenizer().tokenize(sent) 
     mx = map(stem.stem, tx)
     px = [x for x in mx if x not in stop]
-    return ' '.join(px)
+    return px
+
+
+@app.route("/")
+def hello():
+    return "Tokenize, stemming, removing stop words.\n"
+
+
+@app.route("/ru", methods=['POST'])
+def post_russian():
+    if 'text' in request.form:
+        js = russian(request.form['text'])
+    else:
+        js = []
+    return Response(json.dumps(js),  mimetype='application/json; charset=utf8')
+
 
 if __name__ == '__main__':
-    rus_text = u'Пролетариат использует свое политическое господство для того, чтобы вырвать у буржуазии шаг за шагом весь капитал, централизовать все орудия производства в руках государства, т. е. пролетариата, организованного как господствующий класс, и возможно более быстро увеличить сумму производительных сил.'
-    print rus_text
-    print russian(rus_text)
+    app.run(host = '127.0.0.1', debug = True)

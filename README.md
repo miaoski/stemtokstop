@@ -27,6 +27,8 @@ Open an issue, or better, submit a pull request.
 
 I'm not satisfied with the current output, because I'd like them to be in Noun-stem and not the stems in a stemmer.  For example, `europe`, not `europ` for Europe.  It's possible to find another stemmer, anyhow.
 
+I can't find a Turkish stemmer.  You know a working one, please open an issue.
+
 
 LICENSE
 =======

@@ -10,7 +10,12 @@ app = Flask(__name__)
 JSON_MIME = 'application/json; charset=utf8'
 
 def dutch(sent):
-    pass
+    stem = SnowballStemmer('dutch')
+    stop = stopwords.words('dutch')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def finnish(sent):
     pass
@@ -34,7 +39,12 @@ def danish(sent):
     pass
 
 def english(sent):
-    pass
+    stem = SnowballStemmer('english')
+    stop = stopwords.words('english')
+    tx  = word_tokenize(sent) 
+    mx = map(stem.stem, tx)
+    px = [x for x in mx if x not in stop]
+    return px
 
 def french(sent):
     pass

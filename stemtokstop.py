@@ -123,6 +123,15 @@ def swedish(sent):
     px = [x for x in mx if x not in stop]
     return px
 
+def chinese_t(sent):
+    pass
+
+def chinese_s(sent):
+    pass
+
+def japanese(sent):
+    pass
+
 # ISO639-1
 NLTKlanguages={'nl': dutch,
                'fi': finnish,
@@ -137,7 +146,11 @@ NLTKlanguages={'nl': dutch,
                'hu': hungarian,
                'no': norwegian,
                'ru': russian,
-               'sv': swedish}
+               'sv': swedish,
+               'cht': chinese_t,
+               'chs': chinese_s,
+               'ja': japanese,
+               }
 
 @app.route("/")
 def hello():

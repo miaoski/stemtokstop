@@ -13,7 +13,7 @@ INSTALL
     >>> ^D
     $ python stemtokstop.py
 
-For Japanese stemmer, I chose [MeCab] (http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html) and IPA 辞書.  Please follow its installation guide.
+For Japanese stemmer, I chose Masato Hagiwara's [TinySegmenter] (https://code.google.com/p/mhagiwara/source/browse/trunk/nltk/jpbook/tinysegmenter.py).  It applies BSD License, so I keep a copy here.
 
 
 TEST
@@ -28,11 +28,13 @@ WHAT IF I DON'T LIKE IT?
 ========================
 Open an issue, or better, submit a pull request.
 
-I'm not satisfied with the current output, because I'd like them to be in Noun-stem and not the stems in a stemmer.  For example, `europe`, not `europ` for Europe.  It's possible to find another stemmer, anyhow.
+I'm not satisfied with the current output, because I'd like them to be in Noun-stem and not the stems in a stemmer.  For example, `europe`, not `europ` for Europe.  It's possible to find another stemmer.
+
+As for Japanese stop words, I use a heuristic method to enumerate them.  Japanese, as well as Chinese, needs to be tagged to get high accuracy.  Arbitrarily removing stop words (like the implementation here) results in losing meaningful words.
 
 
 LICENSE
 =======
 Apache License 2.0.  Please refer to `LICENSE`.
-
-Release early, release often.
+* `tinysegmenter.py` is written by Masato Hagiwara (萩原 正人).  Please refer to [his blog] (http://lilyx.net/tinysegmenter-in-python/) for his excellent Japanese tokenizer.
+* Release early, release often.

@@ -22,8 +22,8 @@ text = {
     'es': u'Un espectro se cierne sobre Europa: el espectro del comunismo. Contra este espectro se han conjurado en santa jauría todas las potencias de la vieja Europa, el Papa y el zar, Metternich y Guizot, los radicales franceses y los polizontes alemanes.',
     'tr': u"Avrupa'da bir hayalet dolaşıyor - Komünizm hayaleti. Avrupa'nın tüm eski güçleri bu hayalete karşı kutsal bir sürgün avı için ittifak halindeler, Papa ile Çar, Metternich ile Guizot, Fransız radikalleri ile Alman polisleri.",
     'ja': u'ヨーロッパにはお化けが出ます。共産主義というお化けが。古きヨーロッパのすべての権力が、このお化けを祓うため、神聖な同盟に加わっています。教皇とツァー、メッテルニヒとギゾー、フランスの急進派とドイツの密偵。',
-    'cht': u'一個幽靈，共產主義的幽靈，在歐洲遊盪。為了對這個幽靈進行神聖的圍剿，舊歐洲的一切勢力，教皇和沙皇、梅特涅和基佐、法國的激進派和德國的警察，都聯合起來了。',
-    'chs': u'一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。',
+    #'cht': u'一個幽靈，共產主義的幽靈，在歐洲遊盪。為了對這個幽靈進行神聖的圍剿，舊歐洲的一切勢力，教皇和沙皇、梅特涅和基佐、法國的激進派和德國的警察，都聯合起來了。',
+    #'chs': u'一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。',
     }
 
 for k,v in text.iteritems():

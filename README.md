@@ -15,6 +15,8 @@ INSTALL
 
 For Japanese stemmer, I chose Masato Hagiwara's [TinySegmenter] (https://code.google.com/p/mhagiwara/source/browse/trunk/nltk/jpbook/tinysegmenter.py).  It applies BSD License, so I keep a copy here.
 
+If you like to have a more precise result in Japanese, install [MeCab] (http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html).  Make it UTF-8 only.  stemtokstop will use MeCab in place of TinySegmenter.
+
 
 TEST
 ====

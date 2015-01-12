@@ -6,16 +6,14 @@ from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
 import snowballstemmer
 import json
-import tinysegmenter
-import codecs
+try:
+    import MeCab
+    import mecab_tokenizer as jpn_tok
+except ImportError:
+    import tiny_tokenizer as jpn_tok
 
 app = Flask(__name__)
 JSON_MIME = 'application/json; charset=utf8'
-
-# Japanese stop words
-f = codecs.open('ja_stopword.txt', 'r', 'utf-8')
-JA_STOPWORDS = set([x[:-1] for x in f.readlines()]) # strip \n
-f.close()
 
 def dutch(sent):
     stem = SnowballStemmer('dutch')
@@ -137,11 +135,7 @@ def chinese_s(sent):
     pass
 
 def japanese(sent):
-    stem =  tinysegmenter.TinySegmenter() 
-    stop = JA_STOPWORDS
-    tx = stem.tokenize(sent)
-    px = [x for x in tx if x not in stop]
-    return px
+    return jpn_tok.parse(sent)
 
 # ISO639-1
 NLTKlanguages={'nl': dutch,

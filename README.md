@@ -6,6 +6,7 @@ stemtokstop = stemmer + tokenizer + remove stop words.  It's nothing special, bu
 INSTALL
 =======
     $ pip install nltk
+    $ pip install snowballstemmer  # 1.2.0 supports Turkish
     $ python
     >>> import nltk
     >>> nltk.download() # And download all
@@ -26,8 +27,6 @@ WHAT IF I DON'T LIKE IT?
 Open an issue, or better, submit a pull request.
 
 I'm not satisfied with the current output, because I'd like them to be in Noun-stem and not the stems in a stemmer.  For example, `europe`, not `europ` for Europe.  It's possible to find another stemmer, anyhow.
-
-I can't find a Turkish stemmer.  You know a working one, please open an issue.
 
 
 LICENSE

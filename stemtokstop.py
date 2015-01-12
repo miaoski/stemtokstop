@@ -4,6 +4,7 @@ from nltk.tokenize import word_tokenize
 from nltk.tokenize.punkt import PunktWordTokenizer
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+import snowballstemmer
 import json
 
 app = Flask(__name__)
@@ -58,12 +59,12 @@ def spanish(sent):
     return px
 
 def turkish(sent):
-    #stem = SnowballStemmer('turkish')
+    # No turkish stemmer in NLTK
+    stem = snowballstemmer.stemmer('turkish')
     stop = stopwords.words('turkish')
     tx  = word_tokenize(sent)
-    # No turkish stemmer
-    #mx = map(stem.stem, tx)
-    px = [x for x in tx if x not in stop]
+    mx = stem.stemWords(tx)
+    px = [x for x in mx if x not in stop]
     return px
 
 def danish(sent):
